@@ -1,0 +1,42 @@
+<div id="tableFrame" class="col-md-12">
+    <div id="t-scroll" class="table-responsive">
+        <table class="tableSelf table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="theader" scope="col">#</th>
+                    <th class="theader" scope="col">Description</th>
+                    <th class="theader" scope="col">pallet Config</th>
+                    <th class="theader" scope="col">Stack config</th>
+                    <th class="theader" scope="col">Quantity</th>
+                    <th class="theader" scope="col">Length</th>
+                    <th class="theader" scope="col">Width</th>
+                    <th class="theader" scope="col">Height</th>
+                    <th class="theader" scope="col">Weight</th>
+                    <th class="theader" scope="col">CBM</th>
+                    <th class="theader" scope="col">+</th>
+                    <th class="theader" scope="col">-</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="line" *ngFor="let item of items">
+                    <th scope="row" class="i_num">
+                        <p>{{item.i_num}}</p>
+                    </th>
+                    <td class="name"><input type="text" [ngModel]="item.name" class="w-100" (blur)="modifyArrayCells($event)"></td>
+                    <td class="pallet"><input type="number" class="w-100 " (blur)="modifyArrayCells($event) "></td>
+                    <td class="stack "><input type="number " class="w-100" (blur)="modifyArrayCells($event)"></td>
+                    <td class="qty"><input type="number" class="w-100" (blur)="modifyArrayCells($event)"></td>
+                    <td class="length"><input type="number" class="w-100 " (blur)="modifyArrayCells($event) "></td>
+                    <td class="width "><input type="number " class="w-100" (blur)="modifyArrayCells($event)"></td>
+                    <td class="height"><input type="number" class="w-100 " (blur)="modifyArrayCells($event) "></td>
+                    <td class="weihgt "><input type="number " class="w-100" (blur)="modifyArrayCells($event)"></td>
+                    <td class="cbm">
+                        <p></p>
+                    </td>
+                    <td (click)="addLine($event)">+</td>
+                    <td (click)="decLine($event)">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
